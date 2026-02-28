@@ -26,19 +26,7 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <11 12>;
-        };
-
-        shift_tab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <12 13>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
