@@ -11,6 +11,7 @@
 &trackball {
     automouse-layer = <3>;
     scroll-layers = <4>;
+    scroll-y-invert;
 };
 
 / {
