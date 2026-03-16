@@ -39,32 +39,32 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        DEFAULT {
             bindings = <
-&kp Q             &kp W     &kp E     &kp R                        &kp T                                                          &kp Y        &kp U  &lt 4 I    &kp O    &kp P
-&kp A             &kp S     &kp D     &kp F                        &kp G        &kp LS(LG(S))                      &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp SQT
-&mt LEFT_SHIFT Z  &kp X     &kp C     &kp V                        &kp B        &kp COLON                          &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL         &kp LALT  &kp LCMD  &lt_to_layer_0 5 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 1 INT_MUHENKAN      &kp BACKSPACE  &lt 1 ENTER                             &kp DEL
+&kp Q             &kp W     &kp E     &kp R             &kp T                                               &kp Y      &kp U  &lt 4 I    &kp O    &kp P
+&kp A             &kp S     &kp D     &kp F             &kp G        &kp LS(LG(S))           &none          &kp H      &kp J  &kp K      &kp L    &kp SQT
+&mt LEFT_SHIFT Z  &kp X     &kp C     &kp V             &kp B        &none                   &none          &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL         &kp LALT  &kp LCMD  &lt 5 INT_HENKAN  &lt 2 SPACE  &lt 1 INT_MUHENKAN      &kp BACKSPACE  &kp ENTER                             &kp ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN UP>;
         };
 
-        FUNCTION {
+        SYMBOL {
             bindings = <
-&trans  &kp F7  &kp F8  &kp F9  &kp F10                      &trans  &trans    &trans    &trans    &trans
-&trans  &kp F4  &kp F5  &kp F6  &kp F11  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &kp F1  &kp F2  &kp F3  &kp F12  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans   &trans      &trans  &trans                                &trans
+&none   &none   &none   &none   &none                       &none   &none     &kp MINUS         &kp EQUAL          &kp GRAVE
+&none   &none   &none   &none   &none   &trans      &none   &none   &kp SEMI  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
+&none   &none   &none   &none   &none   &none       &none   &none   &none     &kp COMMA         &kp DOT            &kp SLASH
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                 &trans
             >;
         };
 
-        NUM {
+        NUM+FN {
             bindings = <
-&kp MINUS       &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0                                 &kp CARET         &kp AMPERSAND      &kp TILDE       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp SLASH       &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS     &trans         &kp UNDERSCORE  &kp EXCLAMATION   &kp AT_SIGN        &kp HASH        &kp DOLLAR            &kp PERCENT
-&kp LEFT_SHIFT  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL     &kp GRAVE      &trans          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &kp BACKSLASH
-&trans          &trans        &trans        &trans        &trans        &trans         &trans          &trans                                                                     &kp PIPE
+&kp F1          &kp F2        &kp F3        &kp F4        &kp F5                            &kp F6            &kp F7             &kp F8          &kp F9           &kp F10
+&kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &trans      &none   &kp NUMBER_6      &kp NUMBER_7       &kp NUMBER_8    &kp NUMBER_9     &kp NUMBER_0
+&kp LEFT_SHIFT  &none         &none         &none         &none         &none       &none   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &none
+&trans          &trans        &trans        &trans        &trans        &trans      &trans  &trans                                                                &trans
             >;
         };
 
@@ -86,12 +86,12 @@
             >;
         };
 
-        layer_6 {
+        ARROW {
             bindings = <
-&kp ESC     &trans    &kp UP    &trans     &trans                                   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&kp TAB     &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans           &bt BT_CLR      &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &trans
-&kp LSHIFT  &trans    &trans    &trans     &trans  &bootloader      &bt BT_CLR_ALL  &trans        &trans        &trans        &trans        &trans
-&trans      &trans    &trans    &trans     &trans  &trans           &trans          &trans                                                  &trans
+&kp ESC     &none     &kp UP    &none      &none                            &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&kp TAB     &kp LEFT  &kp DOWN  &kp RIGHT  &none   &trans           &none   &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &bt BT_CLR
+&kp LSHIFT  &none     &none     &none      &none   &bootloader      &none   &none         &none         &none         &none         &bt BT_CLR_ALL
+&trans      &trans    &trans    &trans     &trans  &trans           &trans  &trans                                                  &trans
             >;
         };
     };
